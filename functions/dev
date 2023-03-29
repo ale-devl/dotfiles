@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# Usage: dev <project>
+# Description: Opens the specified project in VSCode
+function dev() {
+    case $1 in
+        proxy)          code ~/projects/proxy       ;;
+        ushell)         code ~/projects/ushell      ;;
+        pagecomposer    CODE ~/projects/tbd         ;;
+        spacedesigner   CODE ~/projects/tbd         ;;
+        ui5)            code ~/project/openui5      ;;
+        *)              echo "Unknown project: $1"  ;;
+    esac
+}
