@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# Usage: cdt <destination>
+# Description: navigates the current terminal to a predefined destionation
+function cdt () {
+    case $1 in
+        projects)       cd ~/projects                   ;;
+        shellscripts)   cd ~/projects/shell_scripts     ;;
+        proxy)          cd ~/projects/proxy             ;;
+        ushell)         cd ~/projects/ushell            ;;
+        desktop)        cd ~/Desktop                    ;;
+        docs)           cd ~/Documents                  ;;
+        *)              echo "Unknown route $1"         ;;
+    esac
+}
