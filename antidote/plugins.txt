@@ -2,7 +2,9 @@
 fribmendes/geometry
 
 # Plugin
+junegunn/fzf kind:fpath path:shell
 b4b4r07/enhancd
 zdharma/fast-syntax-highlighting
 chrissicool/zsh-256color
 zsh-users/zsh-autosuggestions
+olets/zsh-abbr

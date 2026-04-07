@@ -1,9 +1,9 @@
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 export CLICOLOR=true
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-13.0.2.jdk/Contents/Home"
-export PLATIN_JAVA="/Library/Java/JavaVirtualMachines/jdk-13.0.2.jdk/Contents/Home"
-export PLUGIN_HOME="/Library/Java/JavaVirtualMachines/jdk-13.0.2.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/sapmachine-21.jdk/Contents/Home"
+export PLATIN_JAVA="/Library/Java/JavaVirtualMachines/sapmachine-21.jdk/Contents/Home"
+export PLUGIN_HOME="/Library/Java/JavaVirtualMachines/sapmachine-21.jdk/Contents/Home"
 
 # Do not send data to $company. Sorry, not sorry.
 export ADBLOCK=1
@@ -56,6 +56,3 @@ autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion

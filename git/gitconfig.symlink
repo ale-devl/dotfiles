@@ -12,7 +12,7 @@
     branch = auto
     ui = true
 [core]
-    excludesFile = ~/.gitignore
+	excludesFile = ~/.gitignore_global
     editor = vim
     pager = less -F -X
     compression = 0
@@ -63,6 +63,10 @@
     wip = commit -a -m "WIP" --no-verify
 [protocol]
     version = 2
-[user]
-    name = REDACTED_NAME
-    email = REDACTED_EMAIL
+# [user] name and email are set in ~/.gitconfig.local
+[init]
+	defaultBranch = main
+[credential]
+	helper = osxkeychain
+[http]
+	postBuffer = 157286400

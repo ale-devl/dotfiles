@@ -5,15 +5,10 @@ DOTFILES_ROOT=$(pwd -P)
 if type antidote >/dev/null 2>&1; then
     echo 'Antidote already installed'
 else
-    case $SYSTEM_PACKAGE_MANAGER in
-    brew)
-        brew install antidote;;
-    *)
-        echo 'Brew is not used and no alternative download method is implemented - Antidote will not be installed';;
-    esac
+    brew install antidote
 fi
 
-source /usr/local/opt/antidote/share/antidote/antidote.zsh
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 
 if type antidote >/dev/null 2>&1; then
     echo 'Installing zsh plugins using Antidote'

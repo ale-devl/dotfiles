@@ -1,10 +1,13 @@
-fpath+=( /Users/REDACTED_USER/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-fribmendes-SLASH-geometry )
-source /Users/REDACTED_USER/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-fribmendes-SLASH-geometry/geometry.plugin.zsh
-fpath+=( /Users/REDACTED_USER/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-b4b4r07-SLASH-enhancd )
-source /Users/REDACTED_USER/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-b4b4r07-SLASH-enhancd/enhancd.plugin.zsh
-fpath+=( /Users/REDACTED_USER/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zdharma-SLASH-fast-syntax-highlighting )
-source /Users/REDACTED_USER/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zdharma-SLASH-fast-syntax-highlighting/F-Sy-H.plugin.zsh
-fpath+=( /Users/REDACTED_USER/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-chrissicool-SLASH-zsh-256color )
-source /Users/REDACTED_USER/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-chrissicool-SLASH-zsh-256color/zsh-256color.plugin.zsh
-fpath+=( /Users/REDACTED_USER/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions )
-source /Users/REDACTED_USER/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+fpath+=( "$HOME/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-fribmendes-SLASH-geometry" )
+source "$HOME/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-fribmendes-SLASH-geometry/geometry.plugin.zsh"
+fpath+=( "$HOME/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-junegunn-SLASH-fzf/shell" )
+fpath+=( "$HOME/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-b4b4r07-SLASH-enhancd" )
+source "$HOME/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-b4b4r07-SLASH-enhancd/enhancd.plugin.zsh"
+fpath+=( "$HOME/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zdharma-SLASH-fast-syntax-highlighting" )
+source "$HOME/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zdharma-SLASH-fast-syntax-highlighting/F-Sy-H.plugin.zsh"
+fpath+=( "$HOME/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-chrissicool-SLASH-zsh-256color" )
+source "$HOME/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-chrissicool-SLASH-zsh-256color/zsh-256color.plugin.zsh"
+fpath+=( "$HOME/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions" )
+source "$HOME/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+fpath+=( "$HOME/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-olets-SLASH-zsh-abbr" )
+source "$HOME/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-olets-SLASH-zsh-abbr/zsh-abbr.plugin.zsh"

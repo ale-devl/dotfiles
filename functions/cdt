@@ -4,12 +4,30 @@
 # Description: navigates the current terminal to a predefined destionation
 function cdt () {
     case $1 in
-        projects)       cd ~/projects                   ;;
-        shellscripts)   cd ~/projects/shell_scripts     ;;
-        proxy)          cd ~/projects/proxy             ;;
-        ushell)         cd ~/projects/ushell            ;;
-        desktop)        cd ~/Desktop                    ;;
-        docs)           cd ~/Documents                  ;;
-        *)              echo "Unknown route $1"         ;;
+########################### MISC #####################################
+        dotfiles)       cd ~/.dotfiles                              ;;
+        projects)       cd ~/projects                               ;;
+        desktop)        cd ~/Desktop                                ;;
+        docs|documents) cd ~/Documents                              ;;
+        dls|downloads)  cd ~/Downloads                              ;;
+        obsidian|notes) cd ~/projects/obsidian/$(whoami)            ;;
+########################### FLP ######################################
+        devops)         cd ~/projects/devops                        ;;
+        flpd)           cd ~/projects/flpd                          ;;
+        shellscripts)   cd ~/projects/shell_scripts                 ;;
+        proxy)          cd ~/projects/proxy                         ;;
+        ushell)         cd ~/projects/ushell                        ;;
+        e2e)            cd ~/projects/contentManager/e2etests       ;;
+        contentManager) cd ~/projects/contentManager                ;;
+        pagecomposer)   cd ~/projects/pagecomposer                  ;;
+        spacedesigner)  cd ~/projects/spacedesigner                 ;;
+        openui5)        cd ~/projects/openui5                       ;;
+########################### BPM ######################################
+        wfs)            cd ~/projects/workflow-service              ;;
+
+
+
+
+        *)              echo "Unknown shortcut $1"                  ;;
     esac
 }

@@ -4,11 +4,15 @@
 # Description: Opens the specified project in VSCode
 function dev() {
     case $1 in
-        proxy)          code ~/projects/proxy       ;;
-        ushell)         code ~/projects/ushell      ;;
-        pagecomposer    CODE ~/projects/tbd         ;;
-        spacedesigner   CODE ~/projects/tbd         ;;
-        ui5)            code ~/project/openui5      ;;
-        *)              echo "Unknown project: $1"  ;;
+        dotfiles)       code ~/.dotfiles                        ;;
+        proxy)          code ~/projects/proxy                   ;;
+        ushell)         code ~/projects/ushell                  ;;
+        pagecomposer)   code ~/projects/tbd                     ;;
+        spacedesigner)  code ~/projects/tbd                     ;;
+        ui5)            code ~/project/openui5                  ;;
+        e2e)            code ~/projects/contentManager/e2etests ;;
+        wfs)            code ~/projects/workflow-service        ;;
+        claudemd)       code ~/.claude/CLAUDE.md                ;;
+        *)              echo "Unknown project: $1"              ;;
     esac
 }
