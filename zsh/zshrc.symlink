@@ -84,7 +84,15 @@ node() { nvm use default >/dev/null 2>&1; unset -f node; node "$@"; }
 npm()  { nvm use default >/dev/null 2>&1; unset -f npm;  npm "$@"; }
 npx()  { nvm use default >/dev/null 2>&1; unset -f npx;  npx "$@"; }
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# SDKMAN lazy-loading
 export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+_sdkman_lazy_init() {
+  unset -f sdk java javac mvn mvnDebug
+  [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+}
+sdk()      { _sdkman_lazy_init; sdk "$@"; }
+java()     { _sdkman_lazy_init; java "$@"; }
+javac()    { _sdkman_lazy_init; javac "$@"; }
+mvn()      { _sdkman_lazy_init; mvn "$@"; }
+mvnDebug() { _sdkman_lazy_init; mvnDebug "$@"; }
 export PATH="$HOME/.local/bin:$PATH"
