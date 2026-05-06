@@ -1,0 +1,23 @@
+#!/bin/zsh
+#
+# Wraps the claude CLI to ensure the HAI proxy is running on port 6655.
+# If the proxy isn't running, launches it in a new Ghostty tab first.
+
+if lsof -i :6655 -sTCP:LISTEN &>/dev/null; then
+  command claude "$@"
+else
+  osascript <<'APPLESCRIPT'
+tell application "ghostty"
+  tell front window
+    set originalTab to selected tab
+  end tell
+  set cfg to new surface configuration from {initial input:"hai proxy start\n"}
+  new tab in front window with configuration cfg
+  delay 0.3
+  tell front window
+    select tab originalTab
+  end tell
+end tell
+APPLESCRIPT
+  command claude "$@"
+fi

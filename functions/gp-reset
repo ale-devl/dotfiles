@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Usage: gp-reset
+# Description: Fixes GlobalProtect VPN stuck on "Connecting"
+function gp-reset() {
+    echo "Killing GlobalProtect processes..."
+    sudo killall -9 PanGPS 2>/dev/null
+    killall -9 GlobalProtect 2>/dev/null
+    sleep 2
+    echo "Restarting GlobalProtect..."
+    open -a /Applications/GlobalProtect.app
+    echo "Done. Try connecting again."
+}

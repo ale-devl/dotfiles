@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# Usage: gp-nuke
+# Description: Full restart of GlobalProtect VPN services via launchctl
+function gp-nuke() {
+    local uid=$(id -u)
+
+    echo "Stopping GlobalProtect services..."
+    sudo launchctl bootout system /Library/LaunchDaemons/com.paloaltonetworks.gp.pangpsd.plist 2>/dev/null
+    launchctl bootout gui/$uid /Library/LaunchAgents/com.paloaltonetworks.gp.pangps.plist 2>/dev/null
+    launchctl bootout gui/$uid /Library/LaunchAgents/com.paloaltonetworks.gp.pangpa.plist 2>/dev/null
+
+    echo "Killing remaining processes..."
+    pkill -9 -f "PanGPS|GlobalProtect" 2>/dev/null
+    sleep 2
+
+    echo "Restarting GlobalProtect services..."
+    sudo launchctl bootstrap system /Library/LaunchDaemons/com.paloaltonetworks.gp.pangpsd.plist
+    launchctl bootstrap gui/$uid /Library/LaunchAgents/com.paloaltonetworks.gp.pangps.plist
+    launchctl bootstrap gui/$uid /Library/LaunchAgents/com.paloaltonetworks.gp.pangpa.plist
+
+    echo "Opening GlobalProtect..."
+    open -a /Applications/GlobalProtect.app
+    echo "Done. Try connecting again."
+}
