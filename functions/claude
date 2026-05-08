@@ -3,6 +3,16 @@
 # Wraps the claude CLI to ensure the HAI proxy is running on port 6655.
 # If the proxy isn't running, launches it in a new Ghostty tab first.
 
+# Ensure nvm's bin is on PATH (nvm uses lazy-loading and may not have run yet)
+if ! whence -p claude &>/dev/null && [[ -d "$NVM_DIR/versions/node" ]]; then
+  local bin
+  for bin in $NVM_DIR/versions/node/*/bin/claude(N); do
+    path=("${bin:h}" $path)
+    rehash
+    break
+  done
+fi
+
 if lsof -i :6655 -sTCP:LISTEN &>/dev/null; then
   command claude "$@"
 else
