@@ -75,6 +75,14 @@ antidote load
 
 # NVM lazy-loading
 export NVM_DIR="$HOME/.nvm"
+# Put default node's bin on PATH so globally-installed CLIs (codex, etc.) and
+# their `#!/usr/bin/env node` shebang resolve without first firing a shim.
+if [ -f "$NVM_DIR/alias/default" ]; then
+  _nvm_default="$(cat "$NVM_DIR/alias/default")"
+  _nvm_bin="$(echo "$NVM_DIR/versions/node/v${_nvm_default}"*/bin(N[-1]))"
+  [ -n "$_nvm_bin" ] && export PATH="$_nvm_bin:$PATH"
+  unset _nvm_default _nvm_bin
+fi
 nvm() {
   unset -f nvm node npm npx
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
@@ -96,3 +104,4 @@ javac()    { _sdkman_lazy_init; javac "$@"; }
 mvn()      { _sdkman_lazy_init; mvn "$@"; }
 mvnDebug() { _sdkman_lazy_init; mvnDebug "$@"; }
 export PATH="$HOME/.local/bin:$PATH"
+. '/Users/D065036/.local/bin/env'
